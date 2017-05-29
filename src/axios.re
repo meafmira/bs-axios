@@ -6,7 +6,7 @@ type paramsSerializer 'a = Js.t 'a => string;
 
 type response 'a 'b = {
   .
-  data : Js.t 'a, status : int, statusText : string, headers : Js.t 'b, config : config
+  data : 'a, status : int, statusText : string, headers : Js.t 'b, config : config
 };
 
 type adapter 'a 'b = config => Js.Promise.t (response 'a 'b);
