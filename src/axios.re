@@ -13,7 +13,7 @@ type adapter 'a 'b = config => Js.Promise.t (response 'a 'b);
 
 type auth = Js.t {. username : string, password : string};
 
-type proxy = Js.t {. host : int, port : int, auth : {. username : string, password : string}};
+type proxy = Js.t {. host : int, port : int, auth : Js.t {. username : string, password : string}};
 
 type onProgress 'a = Js.t 'a => unit;
 
