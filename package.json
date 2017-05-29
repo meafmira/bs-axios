@@ -1,0 +1,15 @@
+{
+  "name": "bs-axios",
+  "version": "0.0.1",
+  "description": "Bucklesript bindings to axios",
+  "repository": "https://github.com/meafmira/bs-axios",
+  "author": "meafmira",
+  "license": "MIT",
+  "scripts": {
+    "build": "bsb",
+    "watch": "bsb -w"
+  },
+  "peerDependencies": {
+    "bs-platform": "^1.7.4"
+  }
+}
