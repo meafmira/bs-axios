@@ -1,6 +1,6 @@
 {
   "name": "bs-axios",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Bucklesript bindings to axios",
   "repository": "https://github.com/meafmira/bs-axios",
   "author": "meafmira",
@@ -11,5 +11,8 @@
   },
   "peerDependencies": {
     "bs-platform": "^1.7.4"
+  },
+  "dependencies": {
+    "axios": "^0.16.1"
   }
 }
