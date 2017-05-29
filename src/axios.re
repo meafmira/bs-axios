@@ -4,16 +4,16 @@ type transformer 'a 'b = 'a => 'b;
 
 type paramsSerializer 'a = Js.t 'a => string;
 
-type response 'a 'b = {
+type response 'a 'b = Js.t {
   .
   data : 'a, status : int, statusText : string, headers : Js.t 'b, config : config
 };
 
 type adapter 'a 'b = config => Js.Promise.t (response 'a 'b);
 
-type auth = {. username : string, password : string};
+type auth = Js.t {. username : string, password : string};
 
-type proxy = {. host : int, port : int, auth : {. username : string, password : string}};
+type proxy = Js.t {. host : int, port : int, auth : {. username : string, password : string}};
 
 type onProgress 'a = Js.t 'a => unit;
 
@@ -45,13 +45,6 @@ external makeConfig :
   config =
   "" [@@bs.obj];
 
-/*request(config: AxiosRequestConfig): AxiosPromise;
-  get(url: string, config?: AxiosRequestConfig): AxiosPromise;
-  delete(url: string, config?: AxiosRequestConfig): AxiosPromise;
-  head(url: string, config?: AxiosRequestConfig): AxiosPromise;
-  post(url: string, data?: any, config?: AxiosRequestConfig): AxiosPromise;
-  put(url: string, data?: any, config?: AxiosRequestConfig): AxiosPromise;
-  patch(url: string, data?: any, config?: AxiosRequestConfig): AxiosPromise;*/
 external request : config => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"];
 
 external get : string => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"];
