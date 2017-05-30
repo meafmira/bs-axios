@@ -4,16 +4,14 @@ type transformer 'a 'b = 'a => 'b;
 
 type paramsSerializer 'a = Js.t 'a => string;
 
-type response 'a 'b = Js.t {
-  .
-  data : 'a, status : int, statusText : string, headers : Js.t 'b, config : config
-};
+type response 'a 'b =
+  Js.t {. data : 'a, status : int, statusText : string, headers : Js.t 'b, config : config};
 
 type adapter 'a 'b = config => Js.Promise.t (response 'a 'b);
 
 type auth = Js.t {. username : string, password : string};
 
-type proxy = Js.t {. host : int, port : int, auth : Js.t {. username : string, password : string}};
+type proxy = Js.t {. host : int, port : int, auth : auth};
 
 type onProgress 'a = Js.t 'a => unit;
 
@@ -23,20 +21,20 @@ external makeConfig :
   url::string =>
   method::string? =>
   baseURL::string? =>
-  /*transformRequest::transformer 'a 'b? =>*/
-  /*headers::Js.t 'a? =>*/
-  /*params::Js.t 'a? =>*/
-  /*paramsSerializer::paramsSerializer 'a? =>*/
-  /*data::Js.t 'a? =>*/
+  transformRequest::transformer 'a 'b? =>
+  headers::Js.t 'headers? =>
+  params::Js.t 'params? =>
+  paramsSerializer::paramsSerializer 'params? =>
+  data::Js.t 'data? =>
   timeout::int? =>
   withCredentials::bool? =>
-  /*adapter::adapter 'a 'b? =>*/
+  adapter::adapter 'a 'b? =>
   auth::auth? =>
   responseType::string? =>
   xsrfCookieName::string? =>
   xsrfHeaderName::string? =>
-  /*onUploadProgress::onProgress 'a? =>*/
-  /*onDownloadProgress::onProgress 'a? =>*/
+  onUploadProgress::onProgress 'uploadProgress? =>
+  onDownloadProgress::onProgress 'downloadProgress? =>
   maxContentLength::int? =>
   validateStatus::validateStatus? =>
   maxRedirects::int? =>
