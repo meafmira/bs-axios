@@ -1,4 +1,6 @@
-type config;
+type configWithUrl = Js.t {. url : string};
+
+type config = Js.t {.};
 
 type transformer 'a 'b = 'a => 'b;
 
@@ -18,7 +20,7 @@ type onProgress 'a = Js.t 'a => unit;
 type validateStatus = int => bool;
 
 external makeConfig :
-  url::string =>
+  url::string? =>
   method::string? =>
   baseURL::string? =>
   transformRequest::transformer 'a 'b? =>
@@ -27,7 +29,7 @@ external makeConfig :
   paramsSerializer::paramsSerializer 'params? =>
   data::Js.t 'data? =>
   timeout::int? =>
-  withCredentials::bool? =>
+  withCredentials::Js.boolean? =>
   adapter::adapter 'a 'b? =>
   auth::auth? =>
   responseType::string? =>
@@ -43,7 +45,36 @@ external makeConfig :
   config =
   "" [@@bs.obj];
 
-external request : config => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"];
+external makeConfigWithUrl :
+  url::string =>
+  method::string? =>
+  baseURL::string? =>
+  transformRequest::transformer 'a 'b? =>
+  headers::Js.t 'headers? =>
+  params::Js.t 'params? =>
+  paramsSerializer::paramsSerializer 'params? =>
+  data::Js.t 'data? =>
+  timeout::int? =>
+  withCredentials::Js.boolean? =>
+  adapter::adapter 'a 'b? =>
+  auth::auth? =>
+  responseType::string? =>
+  xsrfCookieName::string? =>
+  xsrfHeaderName::string? =>
+  onUploadProgress::onProgress 'uploadProgress? =>
+  onDownloadProgress::onProgress 'downloadProgress? =>
+  maxContentLength::int? =>
+  validateStatus::validateStatus? =>
+  maxRedirects::int? =>
+  proxy::proxy? =>
+  unit =>
+  configWithUrl =
+  "" [@@bs.obj];
+
+external all : array (Js.Promise.t (response _ _)) => Js.Promise.t (array (response _ _)) =
+  "" [@@bs.module "axios"];
+
+external request : configWithUrl => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"];
 
 external get : string => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"];
 
