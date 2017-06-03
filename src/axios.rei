@@ -71,32 +71,196 @@ external makeConfigWithUrl :
   configWithUrl =
   "" [@@bs.obj];
 
-let all: array (Js.Promise.t (response _ _)) => Js.Promise.t (array (response _ _));
+external all : array (Js.Promise.t (response _ _)) => Js.Promise.t (array (response _ _)) =
+  "" [@@bs.module "axios"];
 
-let request: configWithUrl => Js.Promise.t (response 'a 'b);
+external all2 :
+  (Js.Promise.t (response 'a0 'b0), Js.Promise.t (response 'a1 'b1)) =>
+  Js.Promise.t (response 'a0 'b0, response 'a1 'b1) =
+  "all" [@@bs.module "axios"];
 
-let get: string => Js.Promise.t (response 'a 'b);
+external all3 :
+  (
+    Js.Promise.t (response 'a0 'b0),
+    Js.Promise.t (response 'a1 'b1),
+    Js.Promise.t (response 'a2 'b2)
+  ) =>
+  Js.Promise.t (response 'a0 'b0, response 'a1 'b1, response 'a2 'b2) =
+  "all" [@@bs.module "axios"];
 
-let getc: string => config => Js.Promise.t (response 'a 'b);
+external all4 :
+  (
+    Js.Promise.t (response 'a0 'b0),
+    Js.Promise.t (response 'a1 'b1),
+    Js.Promise.t (response 'a2 'b2),
+    Js.Promise.t (response 'a3 'b3)
+  ) =>
+  Js.Promise.t (response 'a0 'b0, response 'a1 'b1, response 'a2 'b2, response 'a3 'b3) =
+  "all" [@@bs.module "axios"];
 
-let delete: string => Js.Promise.t (response 'a 'b);
+external all5 :
+  (
+    Js.Promise.t (response 'a0 'b0),
+    Js.Promise.t (response 'a1 'b1),
+    Js.Promise.t (response 'a2 'b2),
+    Js.Promise.t (response 'a3 'b3),
+    Js.Promise.t (response 'a4 'b4)
+  ) =>
+  Js.Promise.t (
+    response 'a0 'b0,
+    response 'a1 'b1,
+    response 'a2 'b2,
+    response 'a3 'b3,
+    response 'a4 'b4
+  ) =
+  "all" [@@bs.module "axios"];
 
-let deletec: string => config => Js.Promise.t (response 'a 'b);
+external all6 :
+  (
+    Js.Promise.t (response 'a0 'b0),
+    Js.Promise.t (response 'a1 'b1),
+    Js.Promise.t (response 'a2 'b2),
+    Js.Promise.t (response 'a3 'b3),
+    Js.Promise.t (response 'a4 'b4),
+    Js.Promise.t (response 'a5 'b5)
+  ) =>
+  Js.Promise.t (
+    response 'a0 'b0,
+    response 'a1 'b1,
+    response 'a2 'b2,
+    response 'a3 'b3,
+    response 'a4 'b4,
+    response 'a5 'b5
+  ) =
+  "all" [@@bs.module "axios"];
 
-let post: string => Js.Promise.t (response 'a 'b);
+external all7 :
+  (
+    Js.Promise.t (response 'a0 'b0),
+    Js.Promise.t (response 'a1 'b1),
+    Js.Promise.t (response 'a2 'b2),
+    Js.Promise.t (response 'a3 'b3),
+    Js.Promise.t (response 'a4 'b4),
+    Js.Promise.t (response 'a5 'b5),
+    Js.Promise.t (response 'a6 'b6)
+  ) =>
+  Js.Promise.t (
+    response 'a0 'b0,
+    response 'a1 'b1,
+    response 'a2 'b2,
+    response 'a3 'b3,
+    response 'a4 'b4,
+    response 'a5 'b5,
+    response 'a6 'b6
+  ) =
+  "all" [@@bs.module "axios"];
 
-let postData: string => Js.t 'a => Js.Promise.t (response 'b 'c);
+external all8 :
+  (
+    Js.Promise.t (response 'a0 'b0),
+    Js.Promise.t (response 'a1 'b1),
+    Js.Promise.t (response 'a2 'b2),
+    Js.Promise.t (response 'a3 'b3),
+    Js.Promise.t (response 'a4 'b4),
+    Js.Promise.t (response 'a5 'b5),
+    Js.Promise.t (response 'a6 'b6),
+    Js.Promise.t (response 'a7 'b7)
+  ) =>
+  Js.Promise.t (
+    response 'a0 'b0,
+    response 'a1 'b1,
+    response 'a2 'b2,
+    response 'a3 'b3,
+    response 'a4 'b4,
+    response 'a5 'b5,
+    response 'a6 'b6,
+    response 'a7 'b7
+  ) =
+  "all" [@@bs.module "axios"];
 
-let postDatac: string => Js.t 'a => config => Js.Promise.t (response 'a 'b);
+external all9 :
+  (
+    Js.Promise.t (response 'a0 'b0),
+    Js.Promise.t (response 'a1 'b1),
+    Js.Promise.t (response 'a2 'b2),
+    Js.Promise.t (response 'a3 'b3),
+    Js.Promise.t (response 'a4 'b4),
+    Js.Promise.t (response 'a5 'b5),
+    Js.Promise.t (response 'a6 'b6),
+    Js.Promise.t (response 'a7 'b7),
+    Js.Promise.t (response 'a8 'b8)
+  ) =>
+  Js.Promise.t (
+    response 'a0 'b0,
+    response 'a1 'b1,
+    response 'a2 'b2,
+    response 'a3 'b3,
+    response 'a4 'b4,
+    response 'a5 'b5,
+    response 'a6 'b6,
+    response 'a7 'b7,
+    response 'a8 'b8
+  ) =
+  "all" [@@bs.module "axios"];
 
-let put: string => Js.Promise.t (response 'a 'b);
+external all10 :
+  (
+    Js.Promise.t (response 'a0 'b0),
+    Js.Promise.t (response 'a1 'b1),
+    Js.Promise.t (response 'a2 'b2),
+    Js.Promise.t (response 'a3 'b3),
+    Js.Promise.t (response 'a4 'b4),
+    Js.Promise.t (response 'a5 'b5),
+    Js.Promise.t (response 'a6 'b6),
+    Js.Promise.t (response 'a7 'b7),
+    Js.Promise.t (response 'a8 'b8),
+    Js.Promise.t (response 'a9 'b9)
+  ) =>
+  Js.Promise.t (
+    response 'a0 'b0,
+    response 'a1 'b1,
+    response 'a2 'b2,
+    response 'a3 'b3,
+    response 'a4 'b4,
+    response 'a5 'b5,
+    response 'a6 'b6,
+    response 'a7 'b7,
+    response 'a8 'b8,
+    response 'a9 'b9
+  ) =
+  "all" [@@bs.module "axios"];
 
-let putData: string => Js.t 'a => Js.Promise.t (response 'b 'c);
+external request : configWithUrl => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"];
 
-let putDatac: string => Js.t 'a => config => Js.Promise.t (response 'a 'b);
+external get : string => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"];
 
-let patch: string => Js.Promise.t (response 'a 'b);
+external getc : string => config => Js.Promise.t (response 'a 'b) = "get" [@@bs.module "axios"];
 
-let patchData: string => Js.t 'a => Js.Promise.t (response 'b 'c);
+external delete : string => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"];
 
-let patchDatac: string => Js.t 'a => config => Js.Promise.t (response 'a 'b);
+external deletec : string => config => Js.Promise.t (response 'a 'b) =
+  "delete" [@@bs.module "axios"];
+
+external post : string => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"];
+
+external postData : string => Js.t 'a => Js.Promise.t (response 'b 'c) =
+  "post" [@@bs.module "axios"];
+
+external postDatac : string => Js.t 'a => config => Js.Promise.t (response 'a 'b) =
+  "post" [@@bs.module "axios"];
+
+external put : string => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"];
+
+external putData : string => Js.t 'a => Js.Promise.t (response 'b 'c) =
+  "put" [@@bs.module "axios"];
+
+external putDatac : string => Js.t 'a => config => Js.Promise.t (response 'a 'b) =
+  "put" [@@bs.module "axios"];
+
+external patch : string => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"];
+
+external patchData : string => Js.t 'a => Js.Promise.t (response 'b 'c) =
+  "patch" [@@bs.module "axios"];
+
+external patchDatac : string => Js.t 'a => config => Js.Promise.t (response 'a 'b) =
+  "patch" [@@bs.module "axios"];
