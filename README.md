@@ -8,7 +8,7 @@ $ yarn install bs-axios
 ```
 or
 ```
-$ npm install ns-axios
+$ npm install bs-axios
 ```
 2. Add "bs-axios" to "bs-dependencies" section of `bsconfig.json`
 
