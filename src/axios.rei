@@ -246,7 +246,7 @@ external post : string => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios
 external postData : string => Js.t 'a => Js.Promise.t (response 'b 'c) =
   "post" [@@bs.module "axios"];
 
-external postDatac : string => Js.t 'a => config => Js.Promise.t (response 'a 'b) =
+external postDatac : string => Js.t 'a => config => Js.Promise.t (response 'b 'c) =
   "post" [@@bs.module "axios"];
 
 external put : string => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"];
@@ -254,7 +254,7 @@ external put : string => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"
 external putData : string => Js.t 'a => Js.Promise.t (response 'b 'c) =
   "put" [@@bs.module "axios"];
 
-external putDatac : string => Js.t 'a => config => Js.Promise.t (response 'a 'b) =
+external putDatac : string => Js.t 'a => config => Js.Promise.t (response 'b 'c) =
   "put" [@@bs.module "axios"];
 
 external patch : string => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axios"];
@@ -262,5 +262,5 @@ external patch : string => Js.Promise.t (response 'a 'b) = "" [@@bs.module "axio
 external patchData : string => Js.t 'a => Js.Promise.t (response 'b 'c) =
   "patch" [@@bs.module "axios"];
 
-external patchDatac : string => Js.t 'a => config => Js.Promise.t (response 'a 'b) =
+external patchDatac : string => Js.t 'a => config => Js.Promise.t (response 'b 'c) =
   "patch" [@@bs.module "axios"];
