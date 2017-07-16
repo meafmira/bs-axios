@@ -8,9 +8,9 @@ axios@^0.16.1:
   dependencies:
     follow-redirects "^1.2.3"
 
-bs-platform@^1.7.4:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-1.7.4.tgz#495f529ff509f01eb554cd499d4008283e737aed"
+bs-platform@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-1.8.1.tgz#467beaa28756b0e67ddc340274de1759caba0429"
 
 debug@^2.4.5:
   version "2.6.8"
