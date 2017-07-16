@@ -4,11 +4,11 @@ Bucklescript bindings for axios
 # Installation
 1. Install bs-axios
 ```
-$ yarn install bs-axios
+$ yarn add bs-axios
 ```
 or
 ```
-$ npm install bs-axios
+$ npm install --save bs-axios
 ```
 2. Add "bs-axios" to "bs-dependencies" section of `bsconfig.json`
 
