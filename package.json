@@ -1,10 +1,13 @@
 {
   "name": "bs-axios",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Bucklesript bindings to axios",
   "repository": "https://github.com/meafmira/bs-axios",
   "author": "meafmira",
   "license": "MIT",
+  "keywords": [
+    "axios", "bucklescript", "bsb", "reason", "reasonml", "ocaml", "bs-axios", "bs-platform"
+  ],
   "scripts": {
     "build": "bsb -clean-world -make-world",
     "watch": "bsb -clean-world -make-world -w"
