@@ -2,5 +2,6 @@
   "name": "bs-axios",
   "sources": [
     "src"
-  ]
+  ],
+  "refmt": 3
 }

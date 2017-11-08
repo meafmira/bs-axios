@@ -1,24 +1,33 @@
 {
   "name": "bs-axios",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Bucklesript bindings to axios",
   "repository": "https://github.com/meafmira/bs-axios",
   "author": "meafmira",
   "license": "MIT",
   "keywords": [
-    "axios", "bucklescript", "bsb", "reason", "reasonml", "ocaml", "bs-axios", "bs-platform"
+    "axios",
+    "bucklescript",
+    "bsb",
+    "reason",
+    "reasonml",
+    "ocaml",
+    "bs-axios",
+    "bs-platform"
   ],
   "scripts": {
     "build": "bsb -clean-world -make-world",
-    "watch": "bsb -clean-world -make-world -w"
+    "watch": "bsb -clean-world -make-world -w",
+    "fmt": "yarn prettier --write README.md"
   },
   "peerDependencies": {
-    "bs-platform": "^1.8.1"
+    "bs-platform": "^2.0.0"
   },
   "dependencies": {
-    "axios": "^0.16.1"
+    "axios": "^0.17.0"
   },
   "devDependencies": {
-    "bs-platform": "^1.8.1"
+    "bs-platform": "^2.0.0",
+    "prettier": "^1.8.1"
   }
 }
