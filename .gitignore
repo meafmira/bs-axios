@@ -3,7 +3,7 @@ node_modules
 .merlin
 .vscode
 *test.re
-
+*backup
 
 # Created by https://www.gitignore.io/api/macos
 
