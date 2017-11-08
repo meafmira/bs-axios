@@ -6,13 +6,13 @@ Bucklescript bindings for axios
 
 1. Install bs-axios
 
-```shell
+```bash
 $ yarn add bs-axios
 ```
 
 or
 
-```shell
+```bash
 $ npm install --save bs-axios
 ```
 
