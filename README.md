@@ -1,4 +1,4 @@
-# bs-axios
+# bs-axios [![npm version](https://img.shields.io/npm/v/bs-axios.svg?style=flat-square)](https://www.npmjs.com/package/bs-axios)
 
 Bucklescript bindings for axios
 
