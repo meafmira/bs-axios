@@ -1,8 +1,8 @@
 # bs-axios [![npm version](https://img.shields.io/npm/v/bs-axios.svg?style=flat-square)](https://www.npmjs.com/package/bs-axios)
 
-Bucklescript bindings for axios
+[Axios](https://github.com/axios/axios) bindings for Bucklescript.
 
-# Installation
+## Installation
 
 1. Install bs-axios
 
@@ -18,24 +18,47 @@ $ npm install --save bs-axios
 
 2. Add "bs-axios" to "bs-dependencies" section of `bsconfig.json`
 
-# Examples
+## Examples
 
-## Simple request
+### Simple request
 
 ```reason
 Js.Promise.(
   Axios.get("/user?ID=12345")
-  |> then_((resp) => resolve(Js.log(resp##data)))
-  |> catch((err) => resolve(Js.log(err)))
+  |> then_((response) => resolve(Js.log(response##data)))
+  |> catch((error) => resolve(Js.log(error)))
 );
 ```
 
-## Concurrency
+### Post requests
+
+```reason
+Js.Promise.(
+  Axios.post("/user")
+  |> then_((response) => resolve(Js.log(response##data)))
+  |> catch((error) => resolve(Js.log(error)))
+);
+```
+
+```reason
+let user = {
+  "username": "michel",
+  "password": "12345678"
+};
+
+Js.Promise.(
+  Axios.postData("/auth", {user})
+  |> then_((response) => resolve(Js.log(response##data)))
+  |> catch((error) => resolve(Js.log(error)))
+);
+```
+
+### Concurrency
 
 ```reason
 Js.Promise.(
   Axios.all2((Axios.get("/users/1"), Axios.get("/users/1/friends")))
   |> then_(((user, friends)) => resolve(Js.log2(user##data, friends##data)))
-  |> catch((err) => resolve(Js.log(err)))
+  |> catch((error) => resolve(Js.log(error)))
 );
 ```

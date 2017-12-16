@@ -1,9 +1,11 @@
 lib
 node_modules
 .merlin
+.bsb.lock
 .vscode
 *test.re
 *backup
+*.log
 
 # Created by https://www.gitignore.io/api/macos
 
