@@ -13,7 +13,7 @@ type paramsSerializer('a);
 
 type adapter('a, 'b);
 
-type auth;
+type auth = {. "username": string, "password": string};
 
 type onProgress('a);
 
