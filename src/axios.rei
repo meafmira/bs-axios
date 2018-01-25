@@ -17,7 +17,7 @@ type auth = {. "username": string, "password": string};
 
 type onProgress('a);
 
-type validateStatus;
+type validateStatus = int => bool;
 
 type proxy;
 
