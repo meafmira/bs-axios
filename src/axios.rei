@@ -1,25 +1,4 @@
-type config = Js.t({.});
-
-type configWithUrl = {. "url": string};
-
-type response('a, 'b) = {
-  .
-  "data": 'a, "status": int, "statusText": string, "headers": Js.t('b), "config": config
-};
-
-type transformer('a, 'b);
-
-type paramsSerializer('a);
-
-type adapter('a, 'b);
-
-type auth = {. "username": string, "password": string};
-
-type onProgress('a);
-
-type validateStatus = int => bool;
-
-type proxy;
+open Axios_types;
 
 [@bs.obj]
 external makeConfig :
@@ -313,3 +292,5 @@ external putDatac : (string, Js.t('a), config) => Js.Promise.t(response('b, 'c))
 [@bs.module "axios"]
 external patchDatac : (string, Js.t('a), config) => Js.Promise.t(response('b, 'c)) =
   "patch";
+
+module Instance = Axios_instance;

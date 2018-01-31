@@ -1,77 +1,24 @@
 open Axios_types;
 
-[@bs.obj]
-external makeConfig :
-  (
-    ~url: string=?,
-    ~method: string=?,
-    ~baseURL: string=?,
-    ~transformRequest: transformer('a, 'b)=?,
-    ~headers: Js.t('headers)=?,
-    ~params: Js.t('params)=?,
-    ~paramsSerializer: paramsSerializer('params)=?,
-    ~data: Js.t('data)=?,
-    ~timeout: int=?,
-    ~withCredentials: Js.boolean=?,
-    ~adapter: adapter('a, 'b)=?,
-    ~auth: auth=?,
-    ~responseType: string=?,
-    ~xsrfCookieName: string=?,
-    ~xsrfHeaderName: string=?,
-    ~onUploadProgress: onProgress('uploadProgress)=?,
-    ~onDownloadProgress: onProgress('downloadProgress)=?,
-    ~maxContentLength: int=?,
-    ~validateStatus: validateStatus=?,
-    ~maxRedirects: int=?,
-    ~proxy: proxy=?,
-    unit
-  ) =>
-  config =
+type t;
+
+[@bs.module "axios"] external create : config => t = "";
+
+[@bs.send]
+external all : (t, array(Js.Promise.t(response(_, _)))) => Js.Promise.t(array(response(_, _))) =
   "";
 
-[@bs.obj]
-external makeConfigWithUrl :
-  (
-    ~url: string,
-    ~method: string=?,
-    ~baseURL: string=?,
-    ~transformRequest: transformer('a, 'b)=?,
-    ~headers: Js.t('headers)=?,
-    ~params: Js.t('params)=?,
-    ~paramsSerializer: paramsSerializer('params)=?,
-    ~data: Js.t('data)=?,
-    ~timeout: int=?,
-    ~withCredentials: Js.boolean=?,
-    ~adapter: adapter('a, 'b)=?,
-    ~auth: auth=?,
-    ~responseType: string=?,
-    ~xsrfCookieName: string=?,
-    ~xsrfHeaderName: string=?,
-    ~onUploadProgress: onProgress('uploadProgress)=?,
-    ~onDownloadProgress: onProgress('downloadProgress)=?,
-    ~maxContentLength: int=?,
-    ~validateStatus: validateStatus=?,
-    ~maxRedirects: int=?,
-    ~proxy: proxy=?,
-    unit
-  ) =>
-  configWithUrl =
-  "";
-
-[@bs.module "axios"]
-external all : array(Js.Promise.t(response(_, _))) => Js.Promise.t(array(response(_, _))) =
-  "";
-
-[@bs.module "axios"]
+[@bs.send]
 external all2 :
-  ((Js.Promise.t(response('a0, 'b0)), Js.Promise.t(response('a1, 'b1)))) =>
+  (t, (Js.Promise.t(response('a0, 'b0)), Js.Promise.t(response('a1, 'b1)))) =>
   Js.Promise.t((response('a0, 'b0), response('a1, 'b1))) =
   "all";
 
-[@bs.module "axios"]
+[@bs.send]
 external all3 :
   (
     (
+      t,
       Js.Promise.t(response('a0, 'b0)),
       Js.Promise.t(response('a1, 'b1)),
       Js.Promise.t(response('a2, 'b2))
@@ -80,10 +27,11 @@ external all3 :
   Js.Promise.t((response('a0, 'b0), response('a1, 'b1), response('a2, 'b2))) =
   "all";
 
-[@bs.module "axios"]
+[@bs.send]
 external all4 :
   (
     (
+      t,
       Js.Promise.t(response('a0, 'b0)),
       Js.Promise.t(response('a1, 'b1)),
       Js.Promise.t(response('a2, 'b2)),
@@ -93,10 +41,11 @@ external all4 :
   Js.Promise.t((response('a0, 'b0), response('a1, 'b1), response('a2, 'b2), response('a3, 'b3))) =
   "all";
 
-[@bs.module "axios"]
+[@bs.send]
 external all5 :
   (
     (
+      t,
       Js.Promise.t(response('a0, 'b0)),
       Js.Promise.t(response('a1, 'b1)),
       Js.Promise.t(response('a2, 'b2)),
@@ -115,10 +64,11 @@ external all5 :
   ) =
   "all";
 
-[@bs.module "axios"]
+[@bs.send]
 external all6 :
   (
     (
+      t,
       Js.Promise.t(response('a0, 'b0)),
       Js.Promise.t(response('a1, 'b1)),
       Js.Promise.t(response('a2, 'b2)),
@@ -139,10 +89,11 @@ external all6 :
   ) =
   "all";
 
-[@bs.module "axios"]
+[@bs.send]
 external all7 :
   (
     (
+      t,
       Js.Promise.t(response('a0, 'b0)),
       Js.Promise.t(response('a1, 'b1)),
       Js.Promise.t(response('a2, 'b2)),
@@ -165,10 +116,11 @@ external all7 :
   ) =
   "all";
 
-[@bs.module "axios"]
+[@bs.send]
 external all8 :
   (
     (
+      t,
       Js.Promise.t(response('a0, 'b0)),
       Js.Promise.t(response('a1, 'b1)),
       Js.Promise.t(response('a2, 'b2)),
@@ -193,10 +145,11 @@ external all8 :
   ) =
   "all";
 
-[@bs.module "axios"]
+[@bs.send]
 external all9 :
   (
     (
+      t,
       Js.Promise.t(response('a0, 'b0)),
       Js.Promise.t(response('a1, 'b1)),
       Js.Promise.t(response('a2, 'b2)),
@@ -223,10 +176,11 @@ external all9 :
   ) =
   "all";
 
-[@bs.module "axios"]
+[@bs.send]
 external all10 :
   (
     (
+      t,
       Js.Promise.t(response('a0, 'b0)),
       Js.Promise.t(response('a1, 'b1)),
       Js.Promise.t(response('a2, 'b2)),
@@ -255,42 +209,33 @@ external all10 :
   ) =
   "all";
 
-[@bs.module "axios"] external request : configWithUrl => Js.Promise.t(response('a, 'b)) = "";
+[@bs.send] external request : t => Js.Promise.t(response('a, 'b)) = "";
 
-[@bs.module "axios"] external get : string => Js.Promise.t(response('a, 'b)) = "";
+[@bs.send] external get : (t, string) => Js.Promise.t(response('a, 'b)) = "";
 
-[@bs.module "axios"] external getc : (string, config) => Js.Promise.t(response('a, 'b)) = "get";
+[@bs.send] external getc : (t, string, config) => Js.Promise.t(response('a, 'b)) = "get";
 
-[@bs.module "axios"] external delete : string => Js.Promise.t(response('a, 'b)) = "";
+[@bs.send] external delete : (t, string) => Js.Promise.t(response('a, 'b)) = "";
 
-[@bs.module "axios"] external deletec : (string, config) => Js.Promise.t(response('a, 'b)) =
-  "delete";
+[@bs.send] external deletec : (t, string, config) => Js.Promise.t(response('a, 'b)) = "delete";
 
-[@bs.module "axios"] external post : string => Js.Promise.t(response('a, 'b)) = "";
+[@bs.send] external post : (t, string) => Js.Promise.t(response('a, 'b)) = "";
 
-[@bs.module "axios"] external postData : (string, Js.t('a)) => Js.Promise.t(response('b, 'c)) =
+[@bs.send] external postData : (t, string, Js.t('a)) => Js.Promise.t(response('b, 'c)) = "post";
+
+[@bs.send] external postDatac : (t, string, Js.t('a), config) => Js.Promise.t(response('b, 'c)) =
   "post";
 
-[@bs.module "axios"]
-external postDatac : (string, Js.t('a), config) => Js.Promise.t(response('b, 'c)) =
-  "post";
+[@bs.send] external put : (t, string) => Js.Promise.t(response('a, 'b)) = "";
 
-[@bs.module "axios"] external put : string => Js.Promise.t(response('a, 'b)) = "";
+[@bs.send] external putData : (t, string, Js.t('a)) => Js.Promise.t(response('b, 'c)) = "put";
 
-[@bs.module "axios"] external putData : (string, Js.t('a)) => Js.Promise.t(response('b, 'c)) =
+[@bs.send] external putDatac : (t, string, Js.t('a), config) => Js.Promise.t(response('b, 'c)) =
   "put";
 
-[@bs.module "axios"]
-external putDatac : (string, Js.t('a), config) => Js.Promise.t(response('b, 'c)) =
-  "put";
+[@bs.send] external patch : (t, string) => Js.Promise.t(response('a, 'b)) = "";
 
-[@bs.module "axios"] external patch : string => Js.Promise.t(response('a, 'b)) = "";
+[@bs.send] external patchData : (t, string, Js.t('a)) => Js.Promise.t(response('b, 'c)) = "patch";
 
-[@bs.module "axios"] external patchData : (string, Js.t('a)) => Js.Promise.t(response('b, 'c)) =
+[@bs.send] external patchDatac : (t, string, Js.t('a), config) => Js.Promise.t(response('b, 'c)) =
   "patch";
-
-[@bs.module "axios"]
-external patchDatac : (string, Js.t('a), config) => Js.Promise.t(response('b, 'c)) =
-  "patch";
-
-module Instance = Axios_instance;
