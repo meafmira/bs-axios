@@ -4,7 +4,7 @@ open Axios_types;
 external makeConfig :
   (
     ~url: string=?,
-    ~method: string=?,
+    ~_method: string=?,
     ~baseURL: string=?,
     ~transformRequest: transformer('a, 'b)=?,
     ~headers: Js.t('headers)=?,
@@ -33,7 +33,7 @@ external makeConfig :
 external makeConfigWithUrl :
   (
     ~url: string,
-    ~method: string=?,
+    ~_method: string=?,
     ~baseURL: string=?,
     ~transformRequest: transformer('a, 'b)=?,
     ~headers: Js.t('headers)=?,

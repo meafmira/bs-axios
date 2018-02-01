@@ -4,7 +4,7 @@ open Axios_types;
 external makeConfig :
   (
     ~url: string=?,
-    ~method: string=?,
+    ~_method: string=?,
     ~baseURL: string=?,
     ~transformRequest: transformer('a, 'b)=?,
     ~headers: Js.t('headers)=?,
@@ -29,11 +29,13 @@ external makeConfig :
   config =
   "";
 
+let drawCircle = (~radius as r: int, ~color as c: int) => r * c;
+
 [@bs.obj]
 external makeConfigWithUrl :
   (
     ~url: string,
-    ~method: string=?,
+    ~_method: string=?,
     ~baseURL: string=?,
     ~transformRequest: transformer('a, 'b)=?,
     ~headers: Js.t('headers)=?,
