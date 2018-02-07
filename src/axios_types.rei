@@ -19,4 +19,4 @@ type proxy;
 
 type onProgress('a);
 
-type validateStatus;
+type validateStatus = int => bool;
