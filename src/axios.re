@@ -29,8 +29,6 @@ external makeConfig :
   config =
   "";
 
-let drawCircle = (~radius as r: int, ~color as c: int) => r * c;
-
 [@bs.obj]
 external makeConfigWithUrl :
   (
