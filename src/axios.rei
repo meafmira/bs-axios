@@ -23,6 +23,7 @@ external makeConfig :
     ~maxContentLength: int=?,
     ~validateStatus: validateStatus=?,
     ~maxRedirects: int=?,
+    ~socketPath: string=?,
     ~proxy: proxy=?,
     unit
   ) =>
@@ -52,6 +53,7 @@ external makeConfigWithUrl :
     ~maxContentLength: int=?,
     ~validateStatus: validateStatus=?,
     ~maxRedirects: int=?,
+    ~socketPath: string=?,
     ~proxy: proxy=?,
     unit
   ) =>

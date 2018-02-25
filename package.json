@@ -21,17 +21,17 @@
     "fmt": "yarn prettier --write README.md"
   },
   "peerDependencies": {
-    "bs-platform": "^2.1.0"
+    "bs-platform": "^2.2.1"
   },
   "dependencies": {
-    "axios": "^0.17.1"
+    "axios": "^0.18.0"
   },
   "bugs": {
     "url": "https://github.com/meafmira/bs-axios/issues"
   },
   "homepage": "https://github.com/meafmira/bs-axios#readme",
   "devDependencies": {
-    "bs-platform": "^2.1.0",
+    "bs-platform": "^2.2.1",
     "prettier": "^1.10.2"
   }
 }
