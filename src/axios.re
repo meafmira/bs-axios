@@ -131,7 +131,12 @@ external makeConfigWithUrl :
     ~url: string,
     ~_method: string=?,
     ~baseURL: string=?,
-    ~transformRequest: requestTransformer('data, 'headers, 'resultData)=?,
+    ~transformRequest: requestTransformer(
+                         'postData,
+                         'headers,
+                         'resultPostData,
+                       )
+                         =?,
     ~transformResponse: responseTransformer('data, 'resultData)=?,
     ~headers: Js.t('headers)=?,
     ~params: Js.t('params)=?,
