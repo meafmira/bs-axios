@@ -2,7 +2,7 @@ type configWithUrl;
 
 type config;
 
-type transformer('a, 'b);
+type transformer('a, 'b) = 'a => 'b;
 
 type paramsSerializer('a);
 
