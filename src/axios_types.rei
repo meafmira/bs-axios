@@ -2,13 +2,19 @@ type configWithUrl;
 
 type config;
 
-type transformer('a, 'b) = 'a => 'b;
+type requestTransformer('data, 'headers, 'resultData);
+
+type responseTransformer('data, 'resultData);
 
 type paramsSerializer('a);
 
 type response('a, 'b) = {
   .
-  "data": 'a, "status": int, "statusText": string, "headers": Js.t('b), "config": config
+  "data": 'a,
+  "status": int,
+  "statusText": string,
+  "headers": Js.t('b),
+  "config": config,
 };
 
 type adapter('a, 'b);
