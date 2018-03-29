@@ -4,33 +4,29 @@ let makeResponseTransformer1:
   ('data => 'resultData) => responseTransformer('data, 'resultData);
 
 let makeResponseTransformer2:
-  (('data => 'data0, 'data0 => 'resultData)) =>
+  ('data => 'data0, 'data0 => 'resultData) =>
   responseTransformer('data, 'resultData);
 
 let makeResponseTransformer3:
-  (('data => 'data0, 'data0 => 'data1, 'data1 => 'resultData)) =>
+  ('data => 'data0, 'data0 => 'data1, 'data1 => 'resultData) =>
   responseTransformer('data, 'resultData);
 
 let makeResponseTransformer4:
   (
-    (
-      'data => 'data0,
-      'data0 => 'data1,
-      'data1 => 'data2,
-      'data2 => 'resultData,
-    )
+    'data => 'data0,
+    'data0 => 'data1,
+    'data1 => 'data2,
+    'data2 => 'resultData
   ) =>
   responseTransformer('data, 'resultData);
 
 let makeResponseTransformer5:
   (
-    (
-      'data => 'data0,
-      'data0 => 'data1,
-      'data1 => 'data2,
-      'data2 => 'data3,
-      'data3 => 'resultData,
-    )
+    'data => 'data0,
+    'data0 => 'data1,
+    'data1 => 'data2,
+    'data2 => 'data3,
+    'data3 => 'resultData
   ) =>
   responseTransformer('data, 'resultData);
 
@@ -39,39 +35,33 @@ let makeRequestTransformer1:
   requestTransformer('data, 'headers, 'resultData);
 
 let makeRequestTransformer2:
-  ((('data, 'headers) => 'data0, ('data0, 'headers) => 'resultData)) =>
+  (('data, 'headers) => 'data0, ('data0, 'headers) => 'resultData) =>
   requestTransformer('data, 'headers, 'resultData);
 
 let makeRequestTransformer3:
   (
-    (
-      ('data, 'headers) => 'data0,
-      ('data0, 'headers) => 'data1,
-      ('data1, 'headers) => 'resultData,
-    )
+    ('data, 'headers) => 'data0,
+    ('data0, 'headers) => 'data1,
+    ('data1, 'headers) => 'resultData
   ) =>
   requestTransformer('data, 'headers, 'resultData);
 
 let makeRequestTransformer4:
   (
-    (
-      ('data, 'headers) => 'data0,
-      ('data0, 'headers) => 'data1,
-      ('data1, 'headers) => 'data2,
-      ('data2, 'headers) => 'resultData,
-    )
+    ('data, 'headers) => 'data0,
+    ('data0, 'headers) => 'data1,
+    ('data1, 'headers) => 'data2,
+    ('data2, 'headers) => 'resultData
   ) =>
   requestTransformer('data, 'headers, 'resultData);
 
 let makeRequestTransformer5:
   (
-    (
-      ('data, 'headers) => 'data0,
-      ('data0, 'headers) => 'data1,
-      ('data1, 'headers) => 'data2,
-      ('data2, 'headers) => 'data3,
-      ('data3, 'headers) => 'resultData,
-    )
+    ('data, 'headers) => 'data0,
+    ('data0, 'headers) => 'data1,
+    ('data1, 'headers) => 'data2,
+    ('data2, 'headers) => 'data3,
+    ('data3, 'headers) => 'resultData
   ) =>
   requestTransformer('data, 'headers, 'resultData);
 

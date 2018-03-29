@@ -11,10 +11,16 @@ external makeResponseTransformer2 :
   responseTransformer('data, 'resultData) =
   "%identity";
 
+let makeResponseTransformer2 = (f0, f1) =>
+  makeResponseTransformer2((f0, f1));
+
 external makeResponseTransformer3 :
   (('data => 'data0, 'data0 => 'data1, 'data1 => 'resultData)) =>
   responseTransformer('data, 'resultData) =
   "%identity";
+
+let makeResponseTransformer3 = (f0, f1, f2) =>
+  makeResponseTransformer3((f0, f1, f2));
 
 external makeResponseTransformer4 :
   (
@@ -27,6 +33,9 @@ external makeResponseTransformer4 :
   ) =>
   responseTransformer('data, 'resultData) =
   "%identity";
+
+let makeResponseTransformer4 = (f0, f1, f2, f3) =>
+  makeResponseTransformer4((f0, f1, f2, f3));
 
 external makeResponseTransformer5 :
   (
@@ -41,6 +50,9 @@ external makeResponseTransformer5 :
   responseTransformer('data, 'resultData) =
   "%identity";
 
+let makeResponseTransformer5 = (f0, f1, f2, f3, f4) =>
+  makeResponseTransformer5((f0, f1, f2, f3, f4));
+
 external makeRequestTransformer1 :
   array(('data, 'headers) => 'resultData) =>
   requestTransformer('data, 'headers, 'resultData) =
@@ -53,6 +65,8 @@ external makeRequestTransformer2 :
   requestTransformer('data, 'headers, 'resultData) =
   "%identity";
 
+let makeRequestTransformer2 = (f0, f1) => makeRequestTransformer2((f0, f1));
+
 external makeRequestTransformer3 :
   (
     (
@@ -63,6 +77,9 @@ external makeRequestTransformer3 :
   ) =>
   requestTransformer('data, 'headers, 'resultData) =
   "%identity";
+
+let makeRequestTransformer3 = (f0, f1, f2) =>
+  makeRequestTransformer3((f0, f1, f2));
 
 external makeRequestTransformer4 :
   (
@@ -76,6 +93,9 @@ external makeRequestTransformer4 :
   requestTransformer('data, 'headers, 'resultData) =
   "%identity";
 
+let makeRequestTransformer4 = (f0, f1, f2, f3) =>
+  makeRequestTransformer4((f0, f1, f2, f3));
+
 external makeRequestTransformer5 :
   (
     (
@@ -88,6 +108,9 @@ external makeRequestTransformer5 :
   ) =>
   requestTransformer('data, 'headers, 'resultData) =
   "%identity";
+
+let makeRequestTransformer5 = (f0, f1, f2, f3, f5) =>
+  makeRequestTransformer5((f0, f1, f2, f3, f5));
 
 [@bs.obj]
 external makeConfig :
