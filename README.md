@@ -20,6 +20,11 @@ $ npm install --save bs-axios
 
 ## Examples
 
+See usage examples in examples folder:
+
+* [Request examples](./examples/request_examples.re) (GET, POST)
+* [Instance example](./examples/instance_example.re)
+
 ### Simple request
 
 ```reason

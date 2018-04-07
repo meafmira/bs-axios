@@ -1,7 +1,14 @@
 {
   "name": "bs-axios",
+  "refmt": 3,
   "sources": [
-    "src"
-  ],
-  "refmt": 3
+    {
+      "dir": "src",
+      "public": "all"
+    },
+    {
+      "dir": "examples",
+      "type": "dev"
+    }
+  ]
 }
