@@ -1,5 +1,4 @@
 /* Simple request */
-
 Js.Promise.(
   Axios.get("/user?ID=12345")
   |> then_((response) => resolve(Js.log(response##data)))
@@ -7,7 +6,6 @@ Js.Promise.(
 );
 
 /* Post requests */
-
 Js.Promise.(
   Axios.post("/user")
   |> then_((response) => resolve(Js.log(response##data)))
@@ -26,7 +24,6 @@ Js.Promise.(
 );
 
 /* Concurrency */
-
 Js.Promise.(
   Axios.all2((Axios.get("/users/1"), Axios.get("/users/1/friends")))
   |> then_(((user, friends)) => resolve(Js.log2(user##data, friends##data)))
