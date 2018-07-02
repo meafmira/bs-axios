@@ -78,3 +78,19 @@ open Axios;
 let inst = Instance.create(makeConfig(~baseURL="https://example.com", ()));
 Js.Promise.(Instance.get(inst, "/") |> then_((resp) => resolve(Js.log(resp##data))));
 ```
+
+### Error handling
+
+```reason
+external promiseErrorToJsObj : Js.Promise.error => Js.t('a) = "%identity";
+
+Js.Promise.(
+  Instance.get(inst, "/")
+  |> then_(resp => resolve(Belt.Result.Ok(resp)))
+  |> catch(error => {
+       let error = error |> promiseErrorToJsObj;
+       Js.log(error##response##status);
+       resolve(Belt.Result.Error(error));
+     })
+);
+```
