@@ -1,6 +1,6 @@
 {
   "name": "bs-axios",
-  "version": "0.0.38",
+  "version": "0.0.39",
   "description": "Axios bindings for Bucklescript",
   "repository": "https://github.com/meafmira/bs-axios",
   "author": "meafmira",
