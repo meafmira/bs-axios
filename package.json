@@ -1,6 +1,6 @@
 {
   "name": "bs-axios",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "Axios bindings for Bucklescript",
   "repository": "https://github.com/meafmira/bs-axios",
   "author": "meafmira",
@@ -21,7 +21,7 @@
     "fmt": "yarn prettier --write README.md"
   },
   "peerDependencies": {
-    "bs-platform": "^3.1.5"
+    "bs-platform": "^4.0.2"
   },
   "dependencies": {
     "axios": "^0.18.0"
@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/meafmira/bs-axios#readme",
   "devDependencies": {
-    "bs-platform": "^3.1.5",
-    "prettier": "^1.13.7"
+    "bs-platform": "^4.0.2",
+    "prettier": "^1.14.0"
   }
 }
