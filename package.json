@@ -21,7 +21,7 @@
     "fmt": "yarn prettier --write README.md"
   },
   "peerDependencies": {
-    "bs-platform": "^4.0.2"
+    "bs-platform": "^5.0.0"
   },
   "dependencies": {
     "axios": "^0.18.0"
@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/meafmira/bs-axios#readme",
   "devDependencies": {
-    "bs-platform": "^4.0.2",
-    "prettier": "^1.14.0"
+    "bs-platform": "^5.0.0",
+    "prettier": "^1.16.4"
   }
 }

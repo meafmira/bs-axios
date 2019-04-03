@@ -1,12 +1,12 @@
 open Axios_types;
 
-external makeResponseTransformer1 :
+external makeResponseTransformer1:
   array('data => 'resultData) => responseTransformer('data, 'resultData) =
   "%identity";
 
 let makeResponseTransformer1 = f => makeResponseTransformer1([|f|]);
 
-external makeResponseTransformer2 :
+external makeResponseTransformer2:
   (('data => 'data0, 'data0 => 'resultData)) =>
   responseTransformer('data, 'resultData) =
   "%identity";
@@ -14,7 +14,7 @@ external makeResponseTransformer2 :
 let makeResponseTransformer2 = (f0, f1) =>
   makeResponseTransformer2((f0, f1));
 
-external makeResponseTransformer3 :
+external makeResponseTransformer3:
   (('data => 'data0, 'data0 => 'data1, 'data1 => 'resultData)) =>
   responseTransformer('data, 'resultData) =
   "%identity";
@@ -22,7 +22,7 @@ external makeResponseTransformer3 :
 let makeResponseTransformer3 = (f0, f1, f2) =>
   makeResponseTransformer3((f0, f1, f2));
 
-external makeResponseTransformer4 :
+external makeResponseTransformer4:
   (
     (
       'data => 'data0,
@@ -37,7 +37,7 @@ external makeResponseTransformer4 :
 let makeResponseTransformer4 = (f0, f1, f2, f3) =>
   makeResponseTransformer4((f0, f1, f2, f3));
 
-external makeResponseTransformer5 :
+external makeResponseTransformer5:
   (
     (
       'data => 'data0,
@@ -53,21 +53,21 @@ external makeResponseTransformer5 :
 let makeResponseTransformer5 = (f0, f1, f2, f3, f4) =>
   makeResponseTransformer5((f0, f1, f2, f3, f4));
 
-external makeRequestTransformer1 :
+external makeRequestTransformer1:
   array(('data, 'headers) => 'resultData) =>
   requestTransformer('data, 'headers, 'resultData) =
   "%identity";
 
 let makeRequestTransformer1 = f => makeRequestTransformer1([|f|]);
 
-external makeRequestTransformer2 :
+external makeRequestTransformer2:
   ((('data, 'headers) => 'data0, ('data0, 'headers) => 'resultData)) =>
   requestTransformer('data, 'headers, 'resultData) =
   "%identity";
 
 let makeRequestTransformer2 = (f0, f1) => makeRequestTransformer2((f0, f1));
 
-external makeRequestTransformer3 :
+external makeRequestTransformer3:
   (
     (
       ('data, 'headers) => 'data0,
@@ -81,7 +81,7 @@ external makeRequestTransformer3 :
 let makeRequestTransformer3 = (f0, f1, f2) =>
   makeRequestTransformer3((f0, f1, f2));
 
-external makeRequestTransformer4 :
+external makeRequestTransformer4:
   (
     (
       ('data, 'headers) => 'data0,
@@ -96,7 +96,7 @@ external makeRequestTransformer4 :
 let makeRequestTransformer4 = (f0, f1, f2, f3) =>
   makeRequestTransformer4((f0, f1, f2, f3));
 
-external makeRequestTransformer5 :
+external makeRequestTransformer5:
   (
     (
       ('data, 'headers) => 'data0,
@@ -113,7 +113,7 @@ let makeRequestTransformer5 = (f0, f1, f2, f3, f5) =>
   makeRequestTransformer5((f0, f1, f2, f3, f5));
 
 [@bs.obj]
-external makeConfig :
+external makeConfig:
   (
     ~url: string=?,
     ~_method: string=?,
@@ -149,7 +149,7 @@ external makeConfig :
   "";
 
 [@bs.obj]
-external makeConfigWithUrl :
+external makeConfigWithUrl:
   (
     ~url: string,
     ~_method: string=?,
@@ -185,13 +185,13 @@ external makeConfigWithUrl :
   "";
 
 [@bs.module "axios"]
-external all :
+external all:
   array(Js.Promise.t(response(_, _))) =>
   Js.Promise.t(array(response(_, _))) =
   "";
 
 [@bs.module "axios"]
-external all2 :
+external all2:
   (
     (Js.Promise.t(response('a0, 'b0)), Js.Promise.t(response('a1, 'b1)))
   ) =>
@@ -199,7 +199,7 @@ external all2 :
   "all";
 
 [@bs.module "axios"]
-external all3 :
+external all3:
   (
     (
       Js.Promise.t(response('a0, 'b0)),
@@ -213,7 +213,7 @@ external all3 :
   "all";
 
 [@bs.module "axios"]
-external all4 :
+external all4:
   (
     (
       Js.Promise.t(response('a0, 'b0)),
@@ -233,7 +233,7 @@ external all4 :
   "all";
 
 [@bs.module "axios"]
-external all5 :
+external all5:
   (
     (
       Js.Promise.t(response('a0, 'b0)),
@@ -255,7 +255,7 @@ external all5 :
   "all";
 
 [@bs.module "axios"]
-external all6 :
+external all6:
   (
     (
       Js.Promise.t(response('a0, 'b0)),
@@ -279,7 +279,7 @@ external all6 :
   "all";
 
 [@bs.module "axios"]
-external all7 :
+external all7:
   (
     (
       Js.Promise.t(response('a0, 'b0)),
@@ -305,7 +305,7 @@ external all7 :
   "all";
 
 [@bs.module "axios"]
-external all8 :
+external all8:
   (
     (
       Js.Promise.t(response('a0, 'b0)),
@@ -333,7 +333,7 @@ external all8 :
   "all";
 
 [@bs.module "axios"]
-external all9 :
+external all9:
   (
     (
       Js.Promise.t(response('a0, 'b0)),
@@ -363,7 +363,7 @@ external all9 :
   "all";
 
 [@bs.module "axios"]
-external all10 :
+external all10:
   (
     (
       Js.Promise.t(response('a0, 'b0)),
@@ -395,54 +395,54 @@ external all10 :
   "all";
 
 [@bs.module "axios"]
-external request : configWithUrl => Js.Promise.t(response('a, 'b)) = "";
+external request: configWithUrl => Js.Promise.t(response('a, 'b)) = "";
 
 [@bs.module "axios"]
-external get : string => Js.Promise.t(response('a, 'b)) = "";
+external get: string => Js.Promise.t(response('a, 'b)) = "";
 
 [@bs.module "axios"]
-external getc : (string, config) => Js.Promise.t(response('a, 'b)) = "get";
+external getc: (string, config) => Js.Promise.t(response('a, 'b)) = "get";
 
 [@bs.module "axios"]
-external delete : string => Js.Promise.t(response('a, 'b)) = "";
+external delete: string => Js.Promise.t(response('a, 'b)) = "";
 
 [@bs.module "axios"]
-external deletec : (string, config) => Js.Promise.t(response('a, 'b)) =
+external deletec: (string, config) => Js.Promise.t(response('a, 'b)) =
   "delete";
 
 [@bs.module "axios"]
-external post : string => Js.Promise.t(response('a, 'b)) = "";
+external post: string => Js.Promise.t(response('a, 'b)) = "";
 
 [@bs.module "axios"]
-external postData : (string, Js.t('a)) => Js.Promise.t(response('b, 'c)) =
+external postData: (string, Js.t('a)) => Js.Promise.t(response('b, 'c)) =
   "post";
 
 [@bs.module "axios"]
-external postDatac :
+external postDatac:
   (string, Js.t('a), config) => Js.Promise.t(response('b, 'c)) =
   "post";
 
 [@bs.module "axios"]
-external put : string => Js.Promise.t(response('a, 'b)) = "";
+external put: string => Js.Promise.t(response('a, 'b)) = "";
 
 [@bs.module "axios"]
-external putData : (string, Js.t('a)) => Js.Promise.t(response('b, 'c)) =
+external putData: (string, Js.t('a)) => Js.Promise.t(response('b, 'c)) =
   "put";
 
 [@bs.module "axios"]
-external putDatac :
+external putDatac:
   (string, Js.t('a), config) => Js.Promise.t(response('b, 'c)) =
   "put";
 
 [@bs.module "axios"]
-external patch : string => Js.Promise.t(response('a, 'b)) = "";
+external patch: string => Js.Promise.t(response('a, 'b)) = "";
 
 [@bs.module "axios"]
-external patchData : (string, Js.t('a)) => Js.Promise.t(response('b, 'c)) =
+external patchData: (string, Js.t('a)) => Js.Promise.t(response('b, 'c)) =
   "patch";
 
 [@bs.module "axios"]
-external patchDatac :
+external patchDatac:
   (string, Js.t('a), config) => Js.Promise.t(response('b, 'c)) =
   "patch";
 
