@@ -22,8 +22,8 @@ $ npm install --save bs-axios
 
 See usage examples in examples folder:
 
-* [Request examples](./examples/request_examples.re) (GET, POST)
-* [Instance example](./examples/instance_example.re)
+- [Request examples](./examples/request_examples.re) (GET, POST)
+- [Instance example](./examples/instance_example.re)
 
 ### Simple request
 
@@ -93,4 +93,22 @@ Js.Promise.(
        resolve(Belt.Result.Error(error));
      })
 );
+```
+
+### Headers
+
+```reason
+let headers = Axios.Headers.fromObj({"Content-type": "application/json"});
+Axios.getc("https://example.com", Axios.makeConfig(~headers, ()));
+
+let headersDict =
+  Js.Dict.(
+    {
+      let dict = empty();
+      dict->set("Content-type", "application/json");
+      dict;
+    }
+  );
+let headers = Axios.Headers.fromDict(headersDict);
+Axios.getc("https://example.com", Axios.makeConfig(~headers, ()));
 ```
