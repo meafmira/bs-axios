@@ -1,5 +1,12 @@
 open Axios_types;
 
+module Headers = {
+  type t;
+
+  external fromObj: Js.t({..}) => t = "%identity";
+  external fromDict: Js.Dict.t(string) => t = "%identity";
+};
+
 external makeResponseTransformer1:
   array('data => 'resultData) => responseTransformer('data, 'resultData) =
   "%identity";
@@ -54,15 +61,15 @@ let makeResponseTransformer5 = (f0, f1, f2, f3, f4) =>
   makeResponseTransformer5((f0, f1, f2, f3, f4));
 
 external makeRequestTransformer1:
-  array(('data, 'headers) => 'resultData) =>
-  requestTransformer('data, 'headers, 'resultData) =
+  array(('data, Headers.t) => 'resultData) =>
+  requestTransformer('data, Headers.t, 'resultData) =
   "%identity";
 
 let makeRequestTransformer1 = f => makeRequestTransformer1([|f|]);
 
 external makeRequestTransformer2:
-  ((('data, 'headers) => 'data0, ('data0, 'headers) => 'resultData)) =>
-  requestTransformer('data, 'headers, 'resultData) =
+  ((('data, Headers.t) => 'data0, ('data0, Headers.t) => 'resultData)) =>
+  requestTransformer('data, Headers.t, 'resultData) =
   "%identity";
 
 let makeRequestTransformer2 = (f0, f1) => makeRequestTransformer2((f0, f1));
@@ -70,12 +77,12 @@ let makeRequestTransformer2 = (f0, f1) => makeRequestTransformer2((f0, f1));
 external makeRequestTransformer3:
   (
     (
-      ('data, 'headers) => 'data0,
-      ('data0, 'headers) => 'data1,
-      ('data1, 'headers) => 'resultData,
+      ('data, Headers.t) => 'data0,
+      ('data0, Headers.t) => 'data1,
+      ('data1, Headers.t) => 'resultData,
     )
   ) =>
-  requestTransformer('data, 'headers, 'resultData) =
+  requestTransformer('data, Headers.t, 'resultData) =
   "%identity";
 
 let makeRequestTransformer3 = (f0, f1, f2) =>
@@ -84,13 +91,13 @@ let makeRequestTransformer3 = (f0, f1, f2) =>
 external makeRequestTransformer4:
   (
     (
-      ('data, 'headers) => 'data0,
-      ('data0, 'headers) => 'data1,
-      ('data1, 'headers) => 'data2,
-      ('data2, 'headers) => 'resultData,
+      ('data, Headers.t) => 'data0,
+      ('data0, Headers.t) => 'data1,
+      ('data1, Headers.t) => 'data2,
+      ('data2, Headers.t) => 'resultData,
     )
   ) =>
-  requestTransformer('data, 'headers, 'resultData) =
+  requestTransformer('data, Headers.t, 'resultData) =
   "%identity";
 
 let makeRequestTransformer4 = (f0, f1, f2, f3) =>
@@ -99,14 +106,14 @@ let makeRequestTransformer4 = (f0, f1, f2, f3) =>
 external makeRequestTransformer5:
   (
     (
-      ('data, 'headers) => 'data0,
-      ('data0, 'headers) => 'data1,
-      ('data1, 'headers) => 'data2,
-      ('data2, 'headers) => 'data3,
-      ('data3, 'headers) => 'resultData,
+      ('data, Headers.t) => 'data0,
+      ('data0, Headers.t) => 'data1,
+      ('data1, Headers.t) => 'data2,
+      ('data2, Headers.t) => 'data3,
+      ('data3, Headers.t) => 'resultData,
     )
   ) =>
-  requestTransformer('data, 'headers, 'resultData) =
+  requestTransformer('data, Headers.t, 'resultData) =
   "%identity";
 
 let makeRequestTransformer5 = (f0, f1, f2, f3, f5) =>
@@ -120,12 +127,12 @@ external makeConfig:
     ~baseURL: string=?,
     ~transformRequest: requestTransformer(
                          'postData,
-                         'headers,
+                         Headers.t,
                          'resultPostData,
                        )
                          =?,
     ~transformResponse: responseTransformer('data, 'resultData)=?,
-    ~headers: Js.t('headers)=?,
+    ~headers: Headers.t=?,
     ~params: Js.t('params)=?,
     ~paramsSerializer: paramsSerializer('params)=?,
     ~data: Js.t('data)=?,
@@ -156,12 +163,12 @@ external makeConfigWithUrl:
     ~baseURL: string=?,
     ~transformRequest: requestTransformer(
                          'postData,
-                         'headers,
+                         Headers.t,
                          'resultPostData,
                        )
                          =?,
     ~transformResponse: responseTransformer('data, 'resultData)=?,
-    ~headers: Js.t('headers)=?,
+    ~headers: Headers.t=?,
     ~params: Js.t('params)=?,
     ~paramsSerializer: paramsSerializer('params)=?,
     ~data: Js.t('data)=?,
