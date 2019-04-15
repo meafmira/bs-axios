@@ -150,6 +150,8 @@ external makeConfig:
     ~maxRedirects: int=?,
     ~socketPath: string=?,
     ~proxy: proxy=?,
+    ~httpAgent: Axios_agent.Http.t=?,
+    ~httpsAgent: Axios_agent.Https.t=?,
     unit
   ) =>
   config =
@@ -186,6 +188,8 @@ external makeConfigWithUrl:
     ~maxRedirects: int=?,
     ~socketPath: string=?,
     ~proxy: proxy=?,
+    ~httpAgent: Axios_agent.Http.t=?,
+    ~httpsAgent: Axios_agent.Https.t=?,
     unit
   ) =>
   configWithUrl =
@@ -454,3 +458,4 @@ external patchDatac:
   "patch";
 
 module Instance = Axios_instance;
+module Agent = Axios_agent;
