@@ -112,3 +112,20 @@ let headersDict =
 let headers = Axios.Headers.fromDict(headersDict);
 Axios.getc("https://example.com", Axios.makeConfig(~headers, ()));
 ```
+
+### Node.js HTTP/HTTPS Agent
+
+Providing custom Node.js [`HTTP Agent`](https://nodejs.org/api/http.html#http_class_http_agent)
+allows for configuring connection persistence and reuse. For secure connections,
+[`HTTPS Agent`](https://nodejs.org/api/https.html#https_class_https_agent) allows security related
+configuration to be provided.
+
+```reason
+let httpsAgent =
+  Axios.Agent.Https.(config(~rejectUnauthorized=false, ()) |> create);
+
+Axios.getc(
+  "https://insecure-example.com",
+  Axios.makeConfig(~httpsAgent, ()),
+);
+```
