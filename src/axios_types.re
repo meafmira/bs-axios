@@ -8,12 +8,12 @@ type responseTransformer('data, 'resultData);
 
 type paramsSerializer('a) = Js.t('a) => string;
 
-type response('a, 'b) = {
+type response('data, 'header) = {
   .
-  "data": 'a,
+  "data": 'data,
   "status": int,
   "statusText": string,
-  "headers": Js.t('b),
+  "headers": Js.t('header),
   "config": config,
 };
 
