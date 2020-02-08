@@ -19,7 +19,8 @@
     "build": "bsb -clean-world -make-world",
     "watch": "bsb -clean-world -make-world -w",
     "fmt": "prettier --write README.md",
-    "preversion": "npm run build"
+    "preversion": "npm run build",
+    "postversion": "npm publish"
   },
   "peerDependencies": {
     "bs-platform": "^7.1.0"
