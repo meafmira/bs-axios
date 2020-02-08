@@ -18,20 +18,21 @@
   "scripts": {
     "build": "bsb -clean-world -make-world",
     "watch": "bsb -clean-world -make-world -w",
-    "fmt": "yarn prettier --write README.md"
+    "fmt": "prettier --write README.md",
+    "preversion": "npm run build"
   },
   "peerDependencies": {
-    "bs-platform": "^5.0.0"
+    "bs-platform": "^7.1.0"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.19.2"
   },
   "bugs": {
     "url": "https://github.com/meafmira/bs-axios/issues"
   },
   "homepage": "https://github.com/meafmira/bs-axios#readme",
   "devDependencies": {
-    "bs-platform": "^5.0.0",
-    "prettier": "^1.16.4"
+    "bs-platform": "^7.1.0",
+    "prettier": "^1.19.1"
   }
 }
