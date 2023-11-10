@@ -23,7 +23,7 @@
     "postversion": "npm publish"
   },
   "peerDependencies": {
-    "axios": ">= 0.21.1 <= 0.22.0",
+    "axios": ">= 0.21.1 <= 1.7.0",
     "bs-platform": "^7.1.0"
   },
   "bugs": {
@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/meafmira/bs-axios#readme",
   "devDependencies": {
-    "axios": ">= 0.21.1 <= 0.22.0",
+    "axios": ">= 0.21.1 <= 1.7.0",
     "bs-platform": "^7.1.0",
     "prettier": "^2.0.4"
   }
