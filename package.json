@@ -23,7 +23,7 @@
   },
   "peerDependencies": {
     "axios": "^1.16.1",
-    "rescript": "^12.2.0"
+    "rescript": "^12.3.0"
   },
   "bugs": {
     "url": "https://github.com/meafmira/bs-axios/issues"
@@ -32,6 +32,6 @@
   "devDependencies": {
     "axios": "^1.16.1",
     "prettier": "^3.8.3",
-    "rescript": "^12.2.0"
+    "rescript": "^12.3.0"
   }
 }
