@@ -1,14 +1,16 @@
 {
   "name": "bs-axios",
-  "refmt": 3,
   "sources": [
     {
-      "dir": "src",
-      "public": "all"
+      "dir": "src"
     },
     {
       "dir": "examples",
       "type": "dev"
     }
-  ]
+  ],
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": false
+  }
 }

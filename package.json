@@ -1,38 +1,37 @@
 {
   "name": "bs-axios",
   "version": "0.0.43",
-  "description": "Axios bindings for Bucklescript",
+  "description": "Axios bindings for ReScript",
   "repository": "https://github.com/meafmira/bs-axios",
   "author": "meafmira",
   "license": "MIT",
   "keywords": [
     "axios",
-    "bucklescript",
-    "bsb",
-    "reason",
+    "rescript",
+    "rescript-bindings",
     "reasonml",
     "ocaml",
-    "bs-axios",
-    "bs-platform"
+    "bs-axios"
   ],
   "scripts": {
-    "build": "bsb -clean-world -make-world",
-    "watch": "bsb -clean-world -make-world -w",
-    "fmt": "prettier --write README.md",
-    "preversion": "npm run build",
+    "build": "rescript build",
+    "clean": "rescript clean",
+    "watch": "rescript watch",
+    "fmt": "rescript format && prettier --write README.md package.json rescript.json",
+    "preversion": "npm run clean && npm run build",
     "postversion": "npm publish"
   },
   "peerDependencies": {
-    "axios": ">= 0.21.1 <= 0.22.0",
-    "bs-platform": "^7.1.0"
+    "axios": "^1.16.1",
+    "rescript": "^12.2.0"
   },
   "bugs": {
     "url": "https://github.com/meafmira/bs-axios/issues"
   },
   "homepage": "https://github.com/meafmira/bs-axios#readme",
   "devDependencies": {
-    "axios": ">= 0.21.1 <= 0.22.0",
-    "bs-platform": "^7.1.0",
-    "prettier": "^2.0.4"
+    "axios": "^1.16.1",
+    "prettier": "^3.8.3",
+    "rescript": "^12.2.0"
   }
 }
